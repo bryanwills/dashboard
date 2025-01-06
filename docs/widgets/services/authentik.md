@@ -12,16 +12,14 @@ Make sure to set Intent to "API Token".
 
 The account you made the API token for also needs the following **Assigned global permissions** in Authentik:
 
-- authentik Core
-  - User
-- authentik Events
-  - Event
+- authentik Core -> Can view User (Model: User)
+- authentik Events -> Can view Event (Model: Event)
 
 Allowed fields: `["users", "loginsLast24H", "failedLoginsLast24H"]`.
 
 ```yaml
 widget:
   type: authentik
-  url: http://authentik.host.or.ip:22070
+  url: http://authentik.host.or.ip:port
   key: api_token
 ```

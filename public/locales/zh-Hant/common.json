@@ -13,7 +13,7 @@
         "ms": "{{value, number}}",
         "date": "{{value, date}}",
         "relativeDate": "{{value, relativeDate}}",
-        "uptime": "{{value, uptime}}",
+        "duration": "{{value, duration}}",
         "months": "月",
         "days": "天",
         "hours": "小時",
@@ -120,7 +120,7 @@
         "grid_power": "電網",
         "home_power": "電源使用率",
         "charge_power": "充電",
-        "watt_hour": "瓦時 (Wh)"
+        "kilowatt": "kW"
     },
     "flood": {
         "download": "下載速率",
@@ -140,7 +140,7 @@
         "connectionStatusPendingDisconnect": "待辦的斷開",
         "connectionStatusDisconnecting": "正在中斷連線",
         "connectionStatusDisconnected": "連接已中斷",
-        "connectionStatusConnected": "已連線",
+        "connectionStatusConnected": "Connected",
         "uptime": "運行時間",
         "maxDown": "最大下載速率",
         "maxUp": "最大上傳速率",
@@ -226,6 +226,10 @@
         "leech": "未完成下載",
         "seed": "已完成下載"
     },
+    "develancacheui": {
+        "cachehitbytes": "Cache Hit Bytes",
+        "cachemissbytes": "Cache Miss Bytes"
+    },
     "downloadstation": {
         "download": "下載速率",
         "upload": "上傳速率",
@@ -277,11 +281,11 @@
         "approved": "已核准",
         "available": "可觀看"
     },
-    "pialert": {
+    "netalertx": {
         "total": "全部",
-        "connected": "已連線",
-        "new_devices": "新裝置",
-        "down_alerts": "離線警告"
+        "connected": "Connected",
+        "new_devices": "New Devices",
+        "down_alerts": "Down Alerts"
     },
     "pihole": {
         "queries": "查詢",
@@ -305,6 +309,16 @@
         "stopped": "已停止",
         "total": "全部"
     },
+    "suwayomi": {
+        "download": "已下載",
+        "nondownload": "Non-Downloaded",
+        "read": "已讀",
+        "unread": "未讀",
+        "downloadedread": "Downloaded & Read",
+        "downloadedunread": "Downloaded & Unread",
+        "nondownloadedread": "Non-Downloaded & Read",
+        "nondownloadedunread": "Non-Downloaded & Unread"
+    },
     "tailscale": {
         "address": "位址",
         "expires": "已失效",
@@ -318,6 +332,19 @@
         "minutes": "{{number}} 分鐘",
         "seconds": "{{number}} 秒",
         "ago": "{{value}} 前"
+    },
+    "technitium": {
+        "totalQueries": "查詢",
+        "totalNoError": "Success",
+        "totalServerFailure": "Failures",
+        "totalNxDomain": "NX Domains",
+        "totalRefused": "Refused",
+        "totalAuthoritative": "Authoritative",
+        "totalRecursive": "Recursive",
+        "totalCached": "Cached",
+        "totalBlocked": "已阻擋",
+        "totalDropped": "Dropped",
+        "totalClients": "客戶端"
     },
     "tdarr": {
         "queue": "佇列",
@@ -827,7 +854,17 @@
     },
     "romm": {
         "platforms": "平台",
-        "totalRoms": "總唯讀記憶體"
+        "totalRoms": "Games",
+        "saves": "Saves",
+        "states": "States",
+        "screenshots": "Screenshots",
+        "totalfilesize": "Total Size"
+    },
+    "mailcow": {
+        "domains": "網域",
+        "mailboxes": "Mailboxes",
+        "mails": "Mails",
+        "storage": "儲存空間"
     },
     "netdata": {
         "warnings": "警告",
@@ -858,7 +895,7 @@
         "studios": "工作室",
         "movies": "電影",
         "tags": "標籤",
-        "oCount": "O Count"
+        "oCount": "0 個"
     },
     "tandoor": {
         "users": "用戶",
@@ -867,10 +904,111 @@
     },
     "homebox": {
         "items": "項目",
-        "totalWithWarranty": "With Warranty",
+        "totalWithWarranty": "有保証",
         "locations": "位置",
         "labels": "標籤",
         "users": "用戶",
         "totalValue": "總共"
+    },
+    "crowdsec": {
+        "alerts": "警示",
+        "bans": "禁止"
+    },
+    "wgeasy": {
+        "connected": "Connected",
+        "enabled": "已啟用",
+        "disabled": "已停用",
+        "total": "全部"
+    },
+    "swagdashboard": {
+        "proxied": "Proxied",
+        "auth": "With Auth",
+        "outdated": "Outdated",
+        "banned": "Banned"
+    },
+    "myspeed": {
+        "ping": "延遲",
+        "download": "下載速率",
+        "upload": "上傳速率"
+    },
+    "stocks": {
+        "stocks": "Stocks",
+        "loading": "Loading",
+        "open": "Open - US Market",
+        "closed": "Closed - US Market",
+        "invalidConfiguration": "Invalid Configuration"
+    },
+    "frigate": {
+        "cameras": "Cameras",
+        "uptime": "運行時間",
+        "version": "版本"
+    },
+    "linkwarden": {
+        "links": "Links",
+        "collections": "Collections",
+        "tags": "標籤"
+    },
+    "zabbix": {
+        "unclassified": "Not classified",
+        "information": "資訊",
+        "warning": "Warning",
+        "average": "Average",
+        "high": "High",
+        "disaster": "Disaster"
+    },
+    "lubelogger": {
+        "vehicle": "Vehicle",
+        "vehicles": "Vehicles",
+        "serviceRecords": "Service Records",
+        "reminders": "Reminders",
+        "nextReminder": "Next Reminder",
+        "none": "None"
+    },
+    "vikunja": {
+        "projects": "Active Projects",
+        "tasks7d": "Tasks Due This Week",
+        "tasksOverdue": "Overdue Tasks",
+        "tasksInProgress": "Tasks In Progress"
+    },
+    "headscale": {
+        "name": "名稱",
+        "address": "位址",
+        "last_seen": "上次連線",
+        "status": "狀態",
+        "online": "在線",
+        "offline": "離線"
+    },
+    "beszel": {
+        "name": "名稱",
+        "systems": "Systems",
+        "up": "在線",
+        "down": "離線",
+        "paused": "擱置中",
+        "pending": "待下載",
+        "status": "狀態",
+        "updated": "已更新",
+        "cpu": "CPU",
+        "memory": "記憶體",
+        "disk": "Disk",
+        "network": "NET"
+    },
+    "argocd": {
+        "apps": "Apps",
+        "synced": "Synced",
+        "outOfSync": "Out Of Sync",
+        "healthy": "健康",
+        "degraded": "Degraded",
+        "progressing": "Progressing",
+        "missing": "缺少",
+        "suspended": "Suspended"
+    },
+    "spoolman": {
+        "loading": "Loading"
+    },
+    "gitlab": {
+        "groups": "Groups",
+        "issues": "出版",
+        "merges": "Merge Requests",
+        "projects": "Projects"
     }
 }

@@ -1,18 +1,26 @@
 import { useTranslation } from "next-i18next";
+import { useEffect, useState } from "react";
 
 import Container from "components/services/widget/container";
 import Block from "components/services/widget/block";
-import useWidgetAPI from "utils/proxy/use-widget-api";
+import { formatProxyUrl } from "utils/proxy/api-helpers";
 
 export default function Component({ service }) {
   const { t } = useTranslation();
 
   const { widget } = service;
-  const { data: stats, error: stashError } = useWidgetAPI(widget, "stats");
+  const [stats, setStats] = useState(null);
 
-  if (stashError) {
-    return <Container service={service} error={stashError} />;
-  }
+  useEffect(() => {
+    async function fetchStats() {
+      const url = formatProxyUrl(widget, "stats");
+      const res = await fetch(url, { method: "POST" });
+      setStats(await res.json());
+    }
+    if (!stats) {
+      fetchStats();
+    }
+  }, [widget, stats]);
 
   if (!stats) {
     return (
@@ -38,12 +46,12 @@ export default function Component({ service }) {
       <Block label="stash.scenes" value={t("common.number", { value: stats.scene_count })} />
       <Block label="stash.scenesPlayed" value={t("common.number", { value: stats.scenes_played })} />
       <Block label="stash.playCount" value={t("common.number", { value: stats.total_play_count })} />
-      <Block label="stash.playDuration" value={t("common.uptime", { value: stats.total_play_duration })} />
+      <Block label="stash.playDuration" value={t("common.duration", { value: stats.total_play_duration })} />
       <Block
         label="stash.sceneSize"
         value={t("common.bbytes", { value: stats.scenes_size, maximumFractionDigits: 1 })}
       />
-      <Block label="stash.sceneDuration" value={t("common.uptime", { value: stats.scenes_duration })} />
+      <Block label="stash.sceneDuration" value={t("common.duration", { value: stats.scenes_duration })} />
 
       <Block label="stash.images" value={t("common.number", { value: stats.image_count })} />
       <Block
